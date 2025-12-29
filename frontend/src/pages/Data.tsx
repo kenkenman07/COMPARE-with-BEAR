@@ -1,7 +1,7 @@
 function Data() {
     return (
         <div>
-            データ送信ページ
+            <h1>データ送信</h1>
         </div>
     )
 }
