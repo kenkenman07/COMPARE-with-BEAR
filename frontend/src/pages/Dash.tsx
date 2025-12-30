@@ -1,7 +1,7 @@
 function Dash() {
     return (
         <div>
-            ダッシュページ
+            <img src="/images/run.png" />
         </div>
     )
 }
