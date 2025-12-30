@@ -12,10 +12,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />} >
           <Route index element={<Dash />} />
-          <Route path="data" element={<Data />} />
-          <Route path="result" element={<Result />} />
-          <Route path="tips" element={<Tips />} /> 
+          <Route path="/result" element={<Result />} />
+          <Route path="/tips" element={<Tips />} /> 
         </Route>
+
+          <Route path="/data" element={<Data />} />
+      
       </Routes>
     </BrowserRouter>
   )

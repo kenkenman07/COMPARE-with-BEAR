@@ -1,13 +1,19 @@
 import { useState } from "react"
+import { useDataStore } from "../modules/data/data.state";
+import { Navigate } from "react-router-dom";
 
 function Data() {
-    const [time, setTime] = useState("")
+    const [time, setTime] = useState("");
     const [distance, setDistance] = useState("");
+    const dataStore = useDataStore();
 
     const submitData = () => {
-        console.log(time)
-        console.log(distance)
+        console.log(time);
+        console.log(distance);
+        dataStore.setData(true);
     }
+
+    if(dataStore.data == true) return <Navigate replace to="/" />;
 
     return (
         <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">

@@ -1,6 +1,11 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
+import { useDataStore } from "./modules/data/data.state";
 
 function Layout() {
+    const { data } = useDataStore();
+
+    if(data != true) return <Navigate replace to="/data" />;
+
     return (
         <div>
             <div className="border border-amber-200 rounded-lg p-4 shadow-sm">
