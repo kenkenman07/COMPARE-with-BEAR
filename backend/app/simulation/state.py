@@ -1,25 +1,22 @@
 from enum import Enum
 from pydantic import BaseModel
 
-class HumanState(BaseModel):
+class UserState(BaseModel):
     speed: float
-    max_speed: float
-    stamina: float
-
+    running_distance: float
+    
 class BearState(BaseModel):
     speed: float
-    stamina: float
-
+    
 class SimulationStatus(str, Enum):
     READY = "ready"
     RUNNING = "running"
     PAUSED = "paused"
-    RESTART = "restart"
     FINISHED = "finished"
 
 class SimulationState(BaseModel):
-    human: HumanState
+    user: UserState
     bear: BearState
-    distance: float         # m
+    between_distance: float  # m
     total_time: float     # s
     status: SimulationStatus
