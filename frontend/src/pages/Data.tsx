@@ -16,7 +16,12 @@ function Data() {
     if(dataStore.data == true) return <Navigate replace to="/" />;
 
     return (
-        <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8 flex flex-col gap-4">
+                
+                <div className="border border-amber-400 rounded-lg p-4 shadow-sm">
+                    <h1 className="text-center text-3xl text-amber-600 font-extrabold tracking-wide">COM 'BEAR' (仮)</h1>
+                </div>
+            
             <div className="flex flex-col items-center">
 
             <h2 className="text-4xl">データを送信する</h2>
