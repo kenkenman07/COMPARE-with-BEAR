@@ -1,0 +1,14 @@
+[project]
+name = "bear-simulation-backend"
+version = "0.1.0"
+description = "Bear chase simulation backend"
+requires-python = ">=3.11"
+
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic"
+]
+
+[tool.uv]
+dev-dependencies = []
