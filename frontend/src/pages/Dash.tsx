@@ -1,7 +1,11 @@
 function Dash() {
     return (
         <div>
-            <img src="/images/run.png" alt="" className="w-full"/>
+            <img 
+                src="/images/run.png" 
+                alt="" 
+                className="w-full animate-run"
+            />
         </div>
     )
 }
