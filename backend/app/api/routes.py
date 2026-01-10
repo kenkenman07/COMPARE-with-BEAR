@@ -34,7 +34,9 @@ async def calc_websocket(websocket: WebSocket):
             await websocket.send_json({
                 "type": "process",
                 "time": round(state.total_time, 1),
-                "user_distance": round(state.user.running_distance, 2)
+                "user_distance": round(state.user.running_distance, 2),
+                "between_distance": int(state.between_distance),
+                "progress_rate": int(((state.initial_between_distance - state.between_distance) / state.initial_between_distance) * 100),
             })
             await asyncio.sleep(state.dt)
 
@@ -42,7 +44,9 @@ async def calc_websocket(websocket: WebSocket):
         await websocket.send_json({
             "type": "result",
             "time": round(state.total_time, 1),
-            "user_distance": round(state.user.running_distance, 2)
+            "user_distance": round(state.user.running_distance, 2),
+            "between_distance": int(state.between_distance),
+            "progress_rate": int(((state.initial_between_distance - state.between_distance) / state.initial_between_distance) * 100),
         })
 
     except WebSocketDisconnect:
