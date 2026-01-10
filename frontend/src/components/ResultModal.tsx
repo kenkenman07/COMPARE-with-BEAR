@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useResultStore } from "../modules/result/result.state";
 
 export function ResultModal() {
@@ -28,9 +28,9 @@ export function ResultModal() {
                         
                         <div className="text-4xl mt-25">
                             <h3 className="font-semibold">走った距離</h3>
-                            <div>{result!.user_running_distance}m</div>
+                            <div>{result!.user_distance}m</div>
                             <h3 className="font-semibold mt-2">走った時間</h3>
-                            <div>{result!.total_time}秒</div>
+                            <div>{result!.time}秒</div>
                         </div>
                         
                         <button 
