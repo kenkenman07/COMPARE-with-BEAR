@@ -1,4 +1,4 @@
 export type Data = {
-    runTime: number,
-    runDistance: number,
+    time: string,
+    distance: string,
 }

@@ -6,20 +6,18 @@ function Data() {
     const [time, setTime] = useState("");
     const [distance, setDistance] = useState("");
     const dataStore = useDataStore();
-
+    
     const submitData = () => {
-        console.log(time);
-        console.log(distance);
-        dataStore.setData(true);
+        dataStore.setData({ time, distance });
     }
 
-    if(dataStore.data == true) return <Navigate replace to="/" />;
+    if(dataStore.data != null) return <Navigate replace to="/" />;
 
     return (
         <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8 flex flex-col gap-4">
                 
                 <div className="border border-amber-400 rounded-lg p-4 shadow-sm">
-                    <h1 className="text-center text-3xl text-amber-600 font-extrabold tracking-wide">COM 'BEAR' (仮)</h1>
+                    <h1 className="text-center text-3xl text-amber-600 font-extrabold tracking-wide">COMPARE WITH 'BEAR'</h1>
                 </div>
             
             <div className="flex flex-col items-center">

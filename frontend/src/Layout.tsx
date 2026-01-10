@@ -4,7 +4,7 @@ import { useDataStore } from "./modules/data/data.state";
 function Layout() {
     const { data } = useDataStore();
 
-    if(data != true) return <Navigate replace to="/data" />;
+    if(data == null) return <Navigate replace to="/data" />;
 
     return (
         <div>
