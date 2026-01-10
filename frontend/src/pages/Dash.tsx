@@ -28,19 +28,22 @@ function Dash() {
             {resultSore.isClosed 
                 ? 
                 <>
-                <img 
-                    src="/images/bear.png" 
-                    alt="" 
-                    className="w-full"
+                <video 
+                        src="/video/bear.mp4" 
+                        autoPlay
+                        muted
+                        className="w-full"
                     />
                 <ResultModal />
                 </>
                 :
                 <>
                     <div className="relative">
-                    <img 
-                        src="/images/run.png" 
-                        alt="" 
+                    <video 
+                        src="/video/run.mp4" 
+                        autoPlay
+                        loop
+                        muted
                         className="w-full"
                     />
                     {resultSore.result && 
