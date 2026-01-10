@@ -28,6 +28,6 @@ async def start(websocket: WebSocket):
                 })
                 break
     except WebSocketDisconnect:
-        manager.reset()
+        print("クライアント側からWebSocket通信を切断されました．")
           
     

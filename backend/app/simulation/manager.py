@@ -22,6 +22,7 @@ class SimulationManager:
 
     def start(self, time_50m, distance):
         self.state.user.speed = 50.0 / time_50m
+        self.state.user.running_distance = 0.0
         self.state.between_distance = distance
         self.state.total_time = 0.0
         if self._running:
@@ -35,6 +36,7 @@ class SimulationManager:
 
     def reset(self):
         self.__init__()
+        self.state.user.running_distance  = 0.0
 
     def _loop(self):
         while self._running:
