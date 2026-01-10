@@ -3,6 +3,7 @@ import { useResult } from "../hooks/useResult";
 import { useDataStore } from "../modules/data/data.state";
 import { useResultStore } from "../modules/result/result.state";
 import { ResultModal } from "../components/ResultModal";
+import { ChaseProgress } from "../components/ProgressBar";
 
 function Dash() {
     const { connect } = useResult();
@@ -22,37 +23,51 @@ function Dash() {
 
     return (
         <div>
-            
 
 
-            {resultSore.isClosed 
-                ? 
+
+            {resultSore.isClosed
+                ?
                 <>
-                <video 
-                        src="/video/bear.mp4" 
+                    <video
+                        src="/video/bear.mp4"
                         autoPlay
                         muted
                         className="w-full"
                     />
-                <ResultModal />
+                    <ResultModal />
                 </>
                 :
                 <>
                     <div className="relative">
-                    <video 
-                        src="/video/run.mp4" 
-                        autoPlay
-                        loop
-                        muted
-                        className="w-full"
-                    />
-                    {resultSore.result && 
-                        <div className="text-white text-7xl">
-                        <div className="absolute top-10 left-30">{result!.time}秒</div>
-                        <div className="absolute top-10 right-30">{result!.user_distance}m</div>
-                        </div>
-                    }
-                    </div>    
+                        <video
+                            src="/video/run.mp4"
+                            autoPlay
+                            loop
+                            muted
+                            className="w-full"
+                        />
+                        {resultSore.result && (
+                            <>
+                                <div className="text-white text-7xl">
+                                    <div className="absolute top-10 left-30">
+                                        {result!.time}秒
+                                    </div>
+                                    <div className="absolute top-10 right-30">
+                                        {result!.user_distance}m
+                                    </div>
+                                </div>
+
+                                <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
+                                    <ChaseProgress progress={result!.progress_rate} />
+                                     <div className="absolute top-10 right-30">
+                                        {result!.between_distance} m
+                                    </div>
+                                </div>
+
+                            </>
+                        )}
+                    </div>
                 </>
             }
 
