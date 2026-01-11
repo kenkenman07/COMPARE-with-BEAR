@@ -4,7 +4,7 @@ type ChaseProgressProps = {
     progress: number;
 };
 
-const ICON_SIZE = 64
+const ICON_SIZE = 32
 
 export const ChaseProgress = ({ progress }: ChaseProgressProps) => {
     const containerRef = useRef<HTMLDivElement>(null);

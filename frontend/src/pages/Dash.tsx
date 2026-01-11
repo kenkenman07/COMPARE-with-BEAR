@@ -72,7 +72,7 @@ function Dash() {
 
                                 <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
                                     <ChaseProgress progress={result!.progress_rate} />
-                                     <div className="absolute top-10 right-30">
+                                     <div className="absolute top-10 right-30 text-2xl">
                                         {result!.between_distance} m
                                     </div>
                                 </div>
