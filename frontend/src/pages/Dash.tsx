@@ -39,6 +39,7 @@ function Dash() {
                 </>
                 :
                 <>
+                    <audio src="/sounds/heart_mid.mp3" loop autoPlay/>
                     <div className="relative">
                         <video
                             src="/video/run.mp4"

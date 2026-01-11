@@ -8,7 +8,12 @@ export function ResultModal() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const timer = setTimeout(() => {setIsOpen(true)}, 2500);
+        const timer = setTimeout(() => {
+            setIsOpen(true);
+            const audio = new Audio("/sounds/bear.mp3");
+            audio.play();
+        
+        }, 2500);
 
         return () => clearTimeout(timer);
     }, []);
