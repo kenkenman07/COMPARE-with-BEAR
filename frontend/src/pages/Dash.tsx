@@ -18,13 +18,12 @@ function Dash() {
     useEffect(() => {
         connect(time, distance);
 
+        return(() => {resultSore.setIsClosed(false);})
     }, []);
 
 
     return (
         <div>
-
-
 
             {resultSore.isClosed
                 ?
@@ -39,6 +38,7 @@ function Dash() {
                 </>
                 :
                 <>
+                    <audio src="/sounds/heart_mid.mp3" loop autoPlay/>
                     <div className="relative">
                         <video
                             src="/video/run.mp4"
@@ -49,13 +49,25 @@ function Dash() {
                         />
                         {resultSore.result && (
                             <>
-                                <div className="text-white text-7xl">
-                                    <div className="absolute top-10 left-30">
-                                        {result!.time}秒
+                                <div className="absolute top-10 left-10 border border-white bg-white/60 rounded-lg text-black w-76">
+                                    
+                                    <span className="text-3xl">走行時間</span>
+                                    <div className="flex items-baseline">
+                                        <span className="w-16 text-7xl text-right">
+                                            {result!.time}
+                                        </span>
+                                        <span className="ml-50 text-4xl">秒</span>
                                     </div>
-                                    <div className="absolute top-10 right-30">
-                                        {result!.user_distance}m
+
+                                    <span className="text-3xl">走行距離</span>
+                                    <div className="flex items-baseline">
+                                        <span className="w-16 text-7xl text-right">
+                                            {result!.user_distance}
+                                        </span>
+                                        <span className="ml-50 text-4xl">m</span>
                                     </div>
+                                                           
+                                    
                                 </div>
 
                                 <div className="absolute bottom-10 left-1/2 -translate-x-1/2">

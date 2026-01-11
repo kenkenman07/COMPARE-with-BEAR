@@ -8,9 +8,17 @@ export function ResultModal() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const timer = setTimeout(() => {setIsOpen(true)}, 2500);
+        const timer = setTimeout(() => {
+            setIsOpen(true);
+            const audio = new Audio("/sounds/bear.mp3");
+            audio.play();
+        
+        }, 2500);
 
-        return () => clearTimeout(timer);
+        return () =>  {
+            clearTimeout(timer);
+            //dataStore.setData(null);
+        }
     }, []);
 
     return (
@@ -34,10 +42,10 @@ export function ResultModal() {
                         </div>
                         
                         <button 
-                            onClick={() => navigate("/tips")}
+                            onClick={() => navigate("/data")}
                             className="flex justify-center py-3 px-5 mt-15 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-slate-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring--500 disabled:opacity-50 disabled:cursor-not-allowed"    
                         >
-                            くまに遭遇したときの対処法を見る
+                            もう一回競争する
                         </button>
                     </div>
                 </div>

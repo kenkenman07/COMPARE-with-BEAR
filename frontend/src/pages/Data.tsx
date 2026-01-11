@@ -1,18 +1,19 @@
 import { useState } from "react"
 import { useDataStore } from "../modules/data/data.state";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Data() {
     const [time, setTime] = useState("");
     const [distance, setDistance] = useState("");
     const dataStore = useDataStore();
+    const navigate = useNavigate();
     
     const submitData = () => {
         dataStore.setData({ time, distance });
+        navigate("/");
     }
-
-    if(dataStore.data != null) return <Navigate replace to="/" />;
-
+    
+    
     return (
         <div className="relative">
             <img src="/images/forest.png" className="w-full"/>
