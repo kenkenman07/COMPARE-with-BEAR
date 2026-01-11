@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { useResultStore } from "../modules/result/result.state";
-import { useDataStore } from "../modules/data/data.state";
 
 export function ResultModal() {
     const [isOpen, setIsOpen] = useState(false);
     const { result } = useResultStore();
     const navigate = useNavigate();
-    const dataStore = useDataStore();
 
     useEffect(() => {
         const timer = setTimeout(() => {
