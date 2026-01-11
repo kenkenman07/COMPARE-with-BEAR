@@ -22,36 +22,18 @@ export const ChaseProgress = ({ progress }: ChaseProgressProps) => {
     }, [progress]);
 
     return (
-        <div
-            ref={containerRef}
-            className="
-                relative
-                w-[500px] h-20
-              bg-gray-200
-                rounded-full
-                overflow-hidden
-            "
-        >
-            {/* クマ（動く） */}
+        <div ref={containerRef} className="relative w-[500px] h-20 bg-gray-200 rounded-full overflow-hidden">
             <img
                 src="/images/bear.png"
                 alt="bear"
-                className="
-                    absolute top-2
-                    w-16 h-16
-                    transition-[left] duration-200 linear
-                "
+                className="absolute top-2 w-16 h-16 transition-[left] duration-200 linear"
                 style={{ left: bearX }}
             />
 
-            {/* 人（固定） */}
             <img
                 src="/images/human.png"
                 alt="human"
-                className="
-                absolute top-2 right-0
-                w-16 h-16
-                "
+                className="absolute top-2 right-0 w-16 h-16"
             />
         </div>
     );
